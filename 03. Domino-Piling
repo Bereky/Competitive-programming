@@ -1,0 +1,11 @@
+const dominoPiling = (m, n) => {
+    if(m*n != 0 && m*n <=16){
+        let board = new Array(m*n);
+        if(board.length % 2 == 0){
+            return board.length/2;
+        }
+        else {
+            return (board.length - board.length % 2)/2;
+        }
+    }   
+}
