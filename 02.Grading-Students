@@ -1,0 +1,16 @@
+const gradeStudents = (grades) => {
+    if( grades.length >= 1 && grades.length <= 60){
+        for(let i = 0; i < grades.length; i++){
+            if(grades[i] >= 38){
+                if(grades[i] % 5 != 0){
+                    for(let j = 1; j <=2; j++){
+                        if((grades[i] + j) % 5 == 0){
+                            grades[i] = grades[i] + j;
+                        }
+                    }
+                }
+            }
+        }
+        return grades
+    }
+}
