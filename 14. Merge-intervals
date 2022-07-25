@@ -1,0 +1,39 @@
+const mergeIntervals = (intervals) => {
+    let n = intervals.length;
+    let temp, merged;
+
+    const mergeTwoArrays = (arr1, arr2) => {
+        if(arr1[1] >= arr2[1]){
+            temp = [arr1[0], arr1[1]];
+        }
+        else {
+            temp = [arr1[0], arr2[1]];
+        }
+        return temp;
+    }
+
+    for(let i = 0; i<n; i++){
+        for(let j = 0; j<n-1; j++){
+            if(intervals[j][0] > intervals[j+1][0]){
+                temp = intervals[j];
+                intervals[j] = intervals[j+1];
+                intervals[j+1] = temp;
+            }
+        }
+    }
+
+    for(let j = 0; j<n-1; j++){
+        if(intervals[j][1] >= intervals[j+1][0]){
+                merged = mergeTwoArrays(intervals[j], intervals[j+1]);
+                intervals.splice(j+1, 1, merged);
+                intervals[j][2] = true;
+            }
+           
+        }
+    
+    intervals = intervals.filter((element) => {
+        return !element[2];
+    })
+
+    return intervals;
+}
