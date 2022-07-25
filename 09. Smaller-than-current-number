@@ -1,0 +1,18 @@
+const smallerThanCurrent = (nums) => {
+    let len = nums.length;
+    let counter;
+    let countedValues = new Array(len);
+    
+    if(len >=2 && len<= 500){
+        for(let i = 0; i< len; i++){
+            counter = 0;
+            for(let j = 0; j<len; j++){
+                if(nums[i] > nums[j]){
+                    counter++;
+                }
+            }
+            countedValues[i] = counter;
+        }
+    }
+    return countedValues;
+}
