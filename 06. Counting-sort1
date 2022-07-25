@@ -1,0 +1,17 @@
+const countingSort =  (arr) => {
+    let frequencyArray = new Array(4);
+    let counter;
+    frequencyArray.fill(0, 0);
+
+    if(arr.length> 100 && arr.length < 100000){
+        for(let i = 0; i<arr.length; i++){
+            counter = arr[i];
+            if(!frequencyArray[counter]){
+                frequencyArray[counter] = 1;
+            }else {
+                frequencyArray[counter] = frequencyArray[counter] + 1;
+            }
+        }
+        console.log(...frequencyArray)
+    }
+}
