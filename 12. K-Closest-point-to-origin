@@ -1,0 +1,33 @@
+const kClosest = (points, k)=> {
+    let n = points.length;
+    let solved = new Array()
+    let first, second;
+    let distanceFromOrigin = 0;
+    let temp;
+
+    if(n>=1 && n<=10000){
+        for(let i = 0; i<n; i++){
+            first = Math.pow(points[i][0], 2)
+            second = Math.pow(points[i][1], 2)
+            distanceFromOrigin = Math.sqrt(first + second)
+            points[i].push(distanceFromOrigin)
+        }
+    
+        for(let i = 0; i<n; i++){
+            for(let j = 0; j<n-1; j++){
+                if(points[j][2] > points[j+1][2]){
+                    temp = points[j];
+                    points[j] = points[j+1]
+                    points[j+1] = temp
+                }
+            }
+        }
+    
+        for(let i = 0; i<k; i++){
+            points[i].pop();
+            solved.push(points[i])
+        }
+    }
+
+    return solved
+};
