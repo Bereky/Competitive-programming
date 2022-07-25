@@ -1,0 +1,24 @@
+const merge = (intervals) => {
+    let n = intervals.length
+    let temp, merged, mergeCounter = [];
+
+    const mergeTwoArrays = (arr1, arr2) => {
+        temp = [arr1[0], arr2[1]]
+        return temp
+    }
+
+        for(let j = 0; j<n-1; j++){
+            if(intervals[j][1] >= intervals[j+1][0]){
+                if(intervals[j][1] <= intervals[j+1][1]){
+                    merged = mergeTwoArrays(intervals[j], intervals[j+1])
+                    intervals.splice(j+1, 1, merged)
+                    mergeCounter.push(j+1)
+                }
+            }
+    }
+    mergeCounter.forEach((e) => {
+        intervals.splice(e-1, 1)
+    })
+    
+    return intervals
+};
