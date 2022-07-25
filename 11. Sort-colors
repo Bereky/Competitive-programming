@@ -1,0 +1,17 @@
+const sortColors = (arr) => {
+    let n = arr.length;
+    let temp;
+    let index = 0;
+    
+    for(let i = 0; i<3; i++){
+        for(let j = index; j<n; j++){
+            if(arr[j] === i){
+                temp = arr[j];
+                arr[j] = arr[index];
+                arr[index] = temp;
+                index++;
+            }
+        }
+    }
+    return arr;
+};
