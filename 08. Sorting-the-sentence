@@ -1,0 +1,18 @@
+const sortSentence = (s) =>  {
+    let sentenceArray = s.split(" ");
+    let len = sentenceArray.length;
+    let sortedSentence = new Array(len)
+    let word;
+    let position;
+    for(let i = 0; i< len; i++){
+        word = sentenceArray[i].toString();
+        position =1;
+        for(let j = 0; j<= len; j++){
+            if(word.includes(position)){
+                sortedSentence[j] = sentenceArray[i].slice(0, sentenceArray[i].length - 1);
+            }
+            position++;
+        }
+    }
+    return sortedSentence.join(" ")
+};
