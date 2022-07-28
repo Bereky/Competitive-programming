@@ -1,0 +1,23 @@
+
+const kthLargestNumber = (nums, k) => {
+    const n = nums.length;
+    let index;
+    let digits = true;
+
+    for(let i of nums){
+        if(isNaN(i)){
+            digits = false
+        }
+    }
+
+    if(n >=1 && digits !== false){
+        nums.join()
+        nums.sort()
+        nums.sort((a, b) => {
+             return  a - b;
+        })
+    
+    index = n - k;
+    return nums[index]
+    }
+}
