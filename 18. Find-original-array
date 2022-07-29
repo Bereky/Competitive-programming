@@ -1,0 +1,42 @@
+const findOriginalArray3 = (changed) => {
+    const n = changed.length;
+    let doubled ={};
+    let original = new Array();
+
+    changed.sort()
+    changed.sort((a,b) => {
+        return a-b;
+    })
+
+    for(i of changed){
+        doubled[i] = 0
+    }
+
+    for(i of changed){
+        doubled[i] = 1 + doubled[i]
+    }
+
+    if(n%2 !== 0){
+        return [];
+    }
+
+    for(let i of changed){
+        if(i === 0 && doubled[i]>=2){
+                original.push(i)
+                doubled[i] -= 2
+        } 
+        else if(i>0 && doubled[i] && doubled[i*2]){
+            original.push(i)
+            doubled[i] -= 1
+            doubled[i*2] -= 1
+        }
+    }
+
+    if(original.length === n/2){
+        return original;
+    }
+    else {
+        return []
+    }
+    
+}
