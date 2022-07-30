@@ -1,0 +1,44 @@
+const maxFrequency = (nums, k) => {
+    const n = nums.length;
+    let tot = 0;
+    let r = 0, l = 0;
+    let freq = {}
+    let frequencyArray = new Array()
+
+    nums.sort()
+    nums.sort((a,b) => {
+        return a - b;
+    })
+    
+    for(let i of nums){
+        freq[i] = 0
+    }
+
+
+    while(r <= n-1){
+        tot = tot + nums[r]
+        while(nums[r]*((r-l)+1) > tot + k){
+            tot = tot - nums[l]
+            l++
+        }
+        
+        freq[nums[r]] = (r-l)+1
+        r++
+    }
+
+    for(let i of nums){
+        frequencyArray.push(freq[i])
+    }
+
+    frequencyArray.sort()
+    frequencyArray.sort((a,b) => {
+        return a - b;
+    })
+
+
+    if(frequencyArray[frequencyArray.length - 1] > 0){
+        return frequencyArray[frequencyArray.length - 1]
+    }else {
+        return 1
+    }
+};
