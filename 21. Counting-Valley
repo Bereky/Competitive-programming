@@ -1,0 +1,33 @@
+const countingValleys = (steps, path) => {
+    let valley = 0;
+    let seaLevel = 0
+
+    const pathContains = path.filter((step) => {
+        if(step !== 'D' || step !== 'U'){
+            return false
+        }
+        else {
+            return true
+        }
+    })
+
+    if(steps >= 2 && pathContains){
+        for(let i in path){
+            if(path[i] === 'D'){
+                seaLevel-=1
+            }
+            else {
+                seaLevel+=1
+            }
+    
+            if(seaLevel === 0){
+                if(nums[i] === 'U' ){
+                    valley+=1
+                }
+            }
+        }
+        return valley
+    }
+    
+    
+}
