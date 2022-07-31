@@ -1,0 +1,19 @@
+const theatreSquare = (n, m, a) => {
+    let flagstone = 0
+    let initialHorizontal = n;
+
+    if(n*m>=1 && a>=1 && a <= Math.pow(10, 9)){
+        while(m > 0){
+            while(n > 0){
+                n -= a
+                flagstone++
+            }
+            m -= a
+            n = initialHorizontal
+        }
+        return flagstone
+    }
+    else {
+        return
+    }
+}
