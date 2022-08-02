@@ -1,1 +1,2 @@
-## Competitive-programming
+## Competitive-programming - WEEK 02
+
