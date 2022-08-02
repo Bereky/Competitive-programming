@@ -1,0 +1,19 @@
+const MinStack = function() {
+    this.myStack = new Array()
+};
+
+MinStack.prototype.push = function(val) {
+    this.myStack.push(val)
+};
+
+MinStack.prototype.pop = function() {
+    this.myStack.pop()
+};
+
+MinStack.prototype.top = function() {
+    console.log(this.myStack[this.myStack.length - 1])
+};
+
+MinStack.prototype.getMin = function() {
+    console.log(Math.min(...this.myStack))
+};
