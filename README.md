@@ -1,9 +1,12 @@
-## Competitive-programming - Solved Problems
+## Competitive Programming
+
+### About
+Here i put all the competitive programming problems i solve.
 
 ### Structure
 - Solved problems are ordered by week
-- Each week is a single branch
-- Each branch contain the set of problems solved during that period
+- Each week has a single branch
+- Each branch contain the list of problems solved orderly.
 
 ### Branch Tree
 
