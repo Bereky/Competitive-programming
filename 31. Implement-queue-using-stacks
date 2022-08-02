@@ -1,0 +1,20 @@
+const MyQueue = function() {
+    this.stackOne = new Array();
+};
+
+MyQueue.prototype.push = function(x) {
+    this.stackOne.push(x)
+};
+
+MyQueue.prototype.pop = function() {
+    return this.stackOne.shift()
+};
+
+MyQueue.prototype.peek = function() {
+    return this.stackOne[0]
+
+};
+
+MyQueue.prototype.empty = function() {
+    return this.stackOne.length == 0
+};
